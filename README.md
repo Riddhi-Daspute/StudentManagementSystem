@@ -1,58 +1,121 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Student Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Project Title
 
-## About Laravel
+Student Management System
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Objective
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A Laravel-based web application for managing students, courses, and
+enrollments. The project demonstrates CRUD operations, student profile
+editing, course assignment, and a many-to-many relationship using a
+pivot table.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Features
 
-## Learning Laravel
+### Student Management
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   Add, view, edit, and delete students
+-   View individual student profiles
+-   Manage name, email, phone, date of birth, and address
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Course Management
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+-   Add, view, edit, and delete courses
+-   Manage course name, course code, and description
 
-## Agentic Development
+### Enrollment Management
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+-   Assign one or multiple courses to a student
+-   View enrolled courses
+-   Remove courses from a student
+-   Store enrollment date
 
-```bash
-composer require laravel/boost --dev
+### Many-to-Many Relationship
 
-php artisan boost:install
+Students and courses are connected through the `enrollments` pivot
+table.
+
+The pivot table contains: - `student_id` - `course_id` -
+`enrollment_date`
+
+### Dashboard
+
+The dashboard displays: - Total Students - Total Courses - Total
+Enrollments - Quick navigation to the main modules
+
+## Technology Stack
+
+-   **Backend:** Laravel 13
+-   **Language:** PHP
+-   **Database:** MySQL
+-   **Frontend:** Blade, HTML, CSS
+-   **ORM:** Laravel Eloquent
+-   **Version Control:** Git & GitHub
+
+## Database Tables
+
+  Table           Purpose
+  --------------- ---------------------------------------------
+  `students`      Stores student information
+  `courses`       Stores course information
+  `enrollments`   Pivot table connecting students and courses
+
+## Installation & Setup
+
+### 1. Clone the repository
+
+``` bash
+git clone https://github.com/Riddhi-Daspute/StudentManagementSystem.git
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Open the project
 
-## Contributing
+``` bash
+cd StudentManagementSystem
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Install dependencies
 
-## Code of Conduct
+``` bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Configure the database
 
-## Security Vulnerabilities
+Create a MySQL database named `student_management`.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Update the database details in the `.env` file.
 
-## License
+### 5. Generate application key
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+``` bash
+php artisan key:generate
+```
+
+### 6. Run migrations
+
+``` bash
+php artisan migrate
+```
+
+### 7. Start the Laravel server
+
+``` bash
+php artisan serve
+```
+
+Open the application at:
+
+`http://127.0.0.1:8000`
+
+## Project Status
+
+The required case-study features have been implemented successfully,
+including student management, course management, enrollment management,
+student profile editing, course assignment, and the many-to-many
+relationship using a pivot table.
+
+## GitHub Repository
+
+https://github.com/Riddhi-Daspute/StudentManagementSystem
